@@ -4,11 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VelopackDemo"
-        mc:Ignorable="d"
+        Title="Velopack Demo"
+        Width="800"
+        Height="450"
         Loaded="Window_Loaded"
         Icon="/icon.ico"
-        Title="Velopack Demo" Height="450" Width="800">
+        mc:Ignorable="d">
     <Grid>
-
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">Welcome!</TextBlock>
     </Grid>
 </Window>
