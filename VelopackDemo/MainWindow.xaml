@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:VelopackDemo"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow" Height="450" Width="800">
+        Icon="/icon.ico"
+        Title="Velopack Demo" Height="450" Width="800">
     <Grid>
 
     </Grid>

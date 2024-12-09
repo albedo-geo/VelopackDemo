@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Runtime.CompilerServices;
+using System.Windows;
 using Velopack;
 
 namespace VelopackDemo;
@@ -23,7 +24,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private static async Task UpdateMyAppAsync()
+    private async Task UpdateMyAppAsync()
     {
         var mgr = new UpdateManager("https://github.com/albedo-geo/VelopackDemo/releases");
 
@@ -33,6 +34,8 @@ public partial class MainWindow : Window
         var newVersion = await mgr.CheckForUpdatesAsync();
         if (newVersion is null)
             return;
+
+        await Application.Current.Dispatcher.InvokeAsync(() => this.Title += $" - v{newVersion}");
 
         var result = MessageBox.Show($"发现新版本：{newVersion}\n当前版本：{mgr.CurrentVersion}\n是否更新？", "版本更新", MessageBoxButton.YesNo);
         if (result == MessageBoxResult.Yes)
